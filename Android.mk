@@ -64,17 +64,10 @@ ifneq ($(BOARD_VOLD_MAX_PARTITIONS),)
 LOCAL_CFLAGS += -DVOLD_MAX_PARTITIONS=$(BOARD_VOLD_MAX_PARTITIONS)
 endif
 
-<<<<<<< HEAD
-=======
 ifeq ($(BOARD_VOLD_EMMC_SHARES_DEV_MAJOR), true)
 LOCAL_CFLAGS += -DVOLD_EMMC_SHARES_DEV_MAJOR
 endif
 
-ifeq ($(BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS), true)
-LOCAL_CFLAGS += -DVOLD_DISC_HAS_MULTIPLE_MAJORS
-endif
-
->>>>>>> e8caab5... DirectVolume: handle discs with multiple major numbers
 ifneq ($(TARGET_USE_CUSTOM_LUN_FILE_PATH),)
 LOCAL_CFLAGS += -DCUSTOM_LUN_FILE=\"$(TARGET_USE_CUSTOM_LUN_FILE_PATH)\"
 endif
@@ -86,8 +79,6 @@ LOCAL_SRC_FILES := \
 	$(common_src_files)
 
 LOCAL_C_INCLUDES := $(common_c_includes)
-
-LOCAL_CFLAGS := -Werror=format
 
 LOCAL_SHARED_LIBRARIES := $(common_shared_libraries)
 
